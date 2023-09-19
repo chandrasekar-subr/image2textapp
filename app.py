@@ -9,13 +9,13 @@ st.title("Easy OCR - Extract Text from Images")
 #subtitle
 st.markdown("## Optical Character Recognition - Using `easyocr`, `streamlit` -  hosted on 🤗 Spaces")
 
-st.markdown("Link to the app - [image-to-text-app on 🤗 Spaces](https://huggingface.co/spaces/Amrrs/image-to-text-app)")
+st.markdown("Link to the app - [image-to-text-app on 🤗 Spaces]")
 
 #image uploader
 image = st.file_uploader(label = "Upload your image here",type=['png','jpg','jpeg'])
 
 
-#@st.cache
+@st.cache
 def load_model(): 
     reader = ocr.Reader(['en'],model_storage_directory='.')
     return reader 
@@ -30,7 +30,8 @@ if image is not None:
     with st.spinner("🤖 AI is at Work! "):
         
 
-        result = reader.readtext(np.array(input_image))
+        # result = reader.readtext(np.array(input_image))
+        result = reader.readtext(input_image)
 
         result_text = [] #empty list for results
 

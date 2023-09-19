@@ -1,0 +1,9 @@
+name: image2text
+dependencies:
+  - pip
+  - pip:
+    - streamlit
+    - opencv-python-headless
+    - numpy
+    - easyocr
+    - Pillow
